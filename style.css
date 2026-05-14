@@ -1,0 +1,154 @@
+:root {
+  --bg: #f2f7ff;
+  --card: #ffffff;
+  --card-border: #d1e1ff;
+  --text: #1f2a38;
+  --muted: #64748b;
+  --accent: #4f7cff;
+  --shadow: 0 20px 50px rgba(31, 42, 56, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", sans-serif;
+  color: var(--text);
+  background: linear-gradient(160deg, #eef5ff 0%, #dbe9ff 35%, #f8fbff 100%);
+}
+
+.page-wrapper {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 40px 20px 60px;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 28px;
+  font-size: clamp(2rem, 4vw, 2.6rem);
+}
+
+.card-container {
+  perspective: 1400px;
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  position: relative;
+  width: min(480px, 90vw);
+  min-height: 360px;
+  transform-style: preserve-3d;
+  transition: transform 0.7s ease;
+  cursor: pointer;
+}
+
+.card.is-flipped {
+  transform: rotateY(180deg);
+}
+
+.card-face {
+  position: absolute;
+  inset: 0;
+  border-radius: 24px;
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  box-shadow: var(--shadow);
+  backface-visibility: hidden;
+  display: grid;
+  place-items: center;
+  padding: 28px;
+}
+
+.card-front {
+}
+
+.card-back {
+  transform: rotateY(180deg);
+}
+
+.card-content {
+  width: 100%;
+  text-align: left;
+}
+
+.hint {
+  margin: 0 0 18px;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+#word {
+  margin: 0;
+  font-size: clamp(2.6rem, 5vw, 4rem);
+  letter-spacing: 0.04em;
+}
+
+.label {
+  margin: 20px 0 6px;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.8rem;
+}
+
+#definition,
+#pos,
+#example,
+#analysis {
+  margin: 0;
+  line-height: 1.7;
+  color: var(--text);
+}
+
+#pos {
+  margin-bottom: 16px;
+}
+
+#example,
+#analysis {
+  white-space: pre-wrap;
+}
+
+.controls {
+  margin-top: 26px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+button {
+  border: none;
+  background: var(--accent);
+  color: white;
+  padding: 14px 22px;
+  border-radius: 999px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  background: #3b65e0;
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 520px) {
+  .card {
+    min-height: 320px;
+  }
+
+  .card-content {
+    padding: 0;
+  }
+}

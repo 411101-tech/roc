@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>英文單字翻牌練習</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="page-wrapper">
+    <h1>高中英單翻牌練習</h1>
+    <div class="card-container">
+      <div class="card" id="word-card">
+        <div class="card-face card-front">
+          <div class="card-content">
+            <p class="hint">點擊卡片翻面</p>
+            <h2 id="word">Example</h2>
+          </div>
+        </div>
+        <div class="card-face card-back">
+          <div class="card-content">
+            <p class="label">中文</p>
+            <p id="definition">例句與解釋會顯示在這裡。</p>
+            <p class="label">詞性</p>
+            <p id="pos">n.</p>
+            <p class="label">例句</p>
+            <p id="example">The quick brown fox jumps over the lazy dog.</p>
+            <p class="label">字根分析</p>
+            <p id="analysis">字根分析內容</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="controls">
+      <button id="prev-btn">上一題</button>
+      <button id="next-btn">下一題</button>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
